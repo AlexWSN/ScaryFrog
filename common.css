@@ -17,6 +17,7 @@
   opacity: 0.6;
   font-family: "Bona Nova SC", serif; /* Aplică fontul */
   font-weight: 400; /* Sau 700, după cum ai nevoie */
+  top: 10px;
 }
 
 .button:hover {

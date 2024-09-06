@@ -95,7 +95,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Filtru semiopac negru */
+  background: rgba(0, 0, 0, 0.5); /* Filtru semiopac negru */
   z-index: -1; /* Poziționează filtrul între animație și imaginea de fundal */
 }
 
