@@ -1,78 +1,21 @@
-/* Stilul pentru buton */
-.button {
-  display: inline-block;
-  width: 1420px; /* Corectat pentru a nu fi prea mare */
-  height: 50px;
-  background-color: transparent;
-  color: rgb(166, 160, 160);
-  border-radius: 12px; /* Colțuri rotunjite */
-  text-align: center;
-  line-height: 50px;
-  text-decoration: none;
-  font-size: 16px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1; /* Asigură că textul butonului este deasupra gradientului */
-  margin: 10px;
-  opacity: 0.6;
-  font-family: "Bona Nova SC", serif; /* Aplică fontul */
-  font-weight: 400; /* Sau 700, după cum ai nevoie */
-  top: 10px;
-}
-
-.button:hover {
-  box-shadow: 0px 0px 20px 10px rgba(255, 140, 0, 0.6); /* Efectul de highlight sub buton */
-}
-/*filtru*/
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Filtru semiopac negru */
-  z-index: -2; /* Poziționează filtrul între animație și imaginea de fundal */
-}
-/* Stilul pentru imaginea de fundal */
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 0; /* Plasează imaginea sub animație și buton */
-  opacity: 0.6; /* Setează opacitatea la 1 pentru vizibilitate completă */
-  background-image: url("images/background.png");
-}
-
-/* Stilul pentru animația de fundal */
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1; /* Asigură-te că animația este peste imaginea de fundal */
-}
-
-/* Animație de fundal */
+/* Global styles */
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
+  width: 100%;
   background-color: #000000; /* Fundal negru pentru contrast */
+  font-family: "Bona Nova SC", serif; /* Font elegant */
 }
 
-/* Elementul de fundal pentru animație */
+/* Stilul pentru animația de fundal */
 .background {
-  position: absolute;
+  position: fixed; /* Folosim fixed pentru a asigura animația pe toate paginile */
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0; /* Asigură că animația este sub buton */
+  z-index: 2; /* Asigură-te că animația este deasupra secțiunii .about-us */
 }
 
 /* Animațiile pentru scântei și cenușă */
@@ -105,7 +48,7 @@ html {
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(100px) scale(0.1);
+    transform: translateY(-100vh) translateX(100px) scale(0.5);
     opacity: 0;
   }
 }
@@ -119,4 +62,104 @@ html {
     transform: translateY(-100vh) translateX(50px) scale(0.5);
     opacity: 0;
   }
+}
+
+/* Stilul pentru secțiunea .about-us */
+.about-us {
+  position: relative; /* Asigură că z-index va funcționa */
+  z-index: 1; /* Specifică un z-index mai mic decât al animației */
+  max-width: 800px;
+  margin: 0 auto; /* Centrează conținutul */
+  padding: 20px;
+  background-color: #1a1a1b; /* Fundal întunecat pentru contrast */
+  border-radius: 15px; /* Colțuri rotunjite */
+  box-shadow: 0 0 20px rgba(181, 109, 15, 0.5); /* Umbra subtilă pentru profunzime */
+  color: #ffffff; /* Culoare text albă moale */
+  text-align: justify; /* Justifică textul */
+  line-height: 1.6; /* Spațiu mai mare între linii pentru lizibilitate */
+  top: 50px;
+  opacity: 100%;
+}
+.about-us h1 {
+  font-size: 2.5rem; /* Titlu mare și elegant */
+  text-align: center; /* Centrează titlul */
+  color: #b26507; /* Culoare evidențiată pentru titlu */
+}
+
+/* Stilul pentru buton */
+.button {
+  display: inline-block;
+  width: 1420px; /* Corectat pentru a nu fi prea mare */
+  height: 50px;
+  background-color: transparent;
+  color: rgb(166, 160, 160);
+  border-radius: 12px; /* Colțuri rotunjite */
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Asigură că textul butonului este deasupra gradientului */
+  margin: 10px;
+  opacity: 0.6;
+  font-weight: 400; /*  */
+  top: 10px;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 20px 10px rgba(255, 140, 0, 0.6); /* Efectul de highlight sub buton */
+}
+
+/* Stilul pentru imaginea de fundal */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Face imaginea fixă la scroll */
+  z-index: 0; /* Plasează imaginea sub animație și buton */
+  opacity: 0.6; /* Setează opacitatea la 0.6 pentru vizibilitate */
+  background-image: url("images/background.png");
+}
+
+/* Portofoliu */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+/* Stil pentru slide-uri și imagini */
+.portfolio-slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Începe de sus */
+  width: 100%;
+  position: relative;
+  overflow-y: auto; /* Permite scroll vertical */
+  z-index: 2;
+  padding: 10px; /* Adaugă padding pentru a evita marginile */
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto; /* Permite înălțimea automată */
+  margin-bottom: 10px; /* Adaugă spațiu între slide-uri */
+}
+
+.slide img {
+  max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+  max-height: 100vh; /* Limitează înălțimea imaginii la înălțimea viewport-ului */
+  height: auto; /* Păstrează proporțiile imaginii */
+  width: auto; /* Păstrează proporțiile imaginii */
+  object-fit: contain; /* Asigură că imaginea este redimensionată pentru a se potrivi în container fără a fi distorsionată */
 }
