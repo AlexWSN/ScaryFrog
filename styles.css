@@ -82,7 +82,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("images/311042268_2732925793507892_8137702030125154330_n.png");
+  background-image: url("images/sfg.png");
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -163,3 +163,30 @@ html {
   }
 }
 /*BACKGROUND ANIMATION*/
+
+/* Media Queries pentru ecrane mai mici */
+@media (max-width: 768px) {
+  .button-container {
+    flex: 1 1 100%; /* Butoanele ocupă întreaga lățime a ecranului pe dispozitive mai mici */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    flex: 1 1 100%; /* Butoanele ocupă întreaga lățime a ecranului pe dispozitive foarte mici */
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .background {
+    background-size: cover; /* Poți ajusta dimensiunea imaginii pentru ecrane mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    background-size: contain; /* Pentru ecrane foarte mici, imaginea va fi redimensionată pentru a se potrivi complet pe ecran */
+  }
+}
