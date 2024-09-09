@@ -77,7 +77,7 @@ html {
   color: #ffffff; /* Culoare text albă moale */
   text-align: justify; /* Justifică textul */
   line-height: 1.6; /* Spațiu mai mare între linii pentru lizibilitate */
-  top: 50px;
+  top: 100px;
   opacity: 100%;
 }
 .about-us h1 {
@@ -89,7 +89,7 @@ html {
 /* Stilul pentru buton */
 .button {
   display: inline-block;
-  width: 1420px; /* Corectat pentru a nu fi prea mare */
+  width: 100%; /* Corectat pentru a nu fi prea mare */
   height: 50px;
   background-color: transparent;
   color: rgb(166, 160, 160);
@@ -98,9 +98,9 @@ html {
   line-height: 50px;
   text-decoration: none;
   font-size: 16px;
-  position: relative;
+  position: fixed;
   overflow: hidden;
-  z-index: 1; /* Asigură că textul butonului este deasupra gradientului */
+  z-index: 10; /* Asigură că textul butonului este deasupra gradientului */
   margin: 10px;
   opacity: 0.6;
   font-weight: 400; /*  */
@@ -145,6 +145,7 @@ html {
   overflow-y: auto; /* Permite scroll vertical */
   z-index: 2;
   padding: 10px; /* Adaugă padding pentru a evita marginile */
+  margin-top: 80px;
 }
 
 .slide {
@@ -162,4 +163,61 @@ html {
   height: auto; /* Păstrează proporțiile imaginii */
   width: auto; /* Păstrează proporțiile imaginii */
   object-fit: contain; /* Asigură că imaginea este redimensionată pentru a se potrivi în container fără a fi distorsionată */
+}
+
+/* Ecrane mici (telefoane mobile) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .slide img {
+    max-width: 100%;
+    max-height: 50vh; /* Ajustează înălțimea imaginii */
+  }
+}
+
+/* Ecrane medii (tablete) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .slide img {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+}
+
+/* Ecrane mari (desktopuri) */
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+  
+  .slide img {
+    max-width: 80%;
+    max-height: 80vh;
+  }
+}
+/* Media Queries pentru ajustări */
+@media only screen and (max-width: 600px) {
+  .button {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .button {
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .button {
+    height: 50px;
+    font-size: 18px;
+  }
 }
