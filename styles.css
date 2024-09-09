@@ -187,6 +187,6 @@ html {
 
 @media (max-width: 480px) {
   .background {
-    background-size: contain; /* Pentru ecrane foarte mici, imaginea va fi redimensionată pentru a se potrivi complet pe ecran */
+    background-size: cover; /* Pentru ecrane foarte mici, imaginea va fi redimensionată pentru a se potrivi complet pe ecran */
   }
 }

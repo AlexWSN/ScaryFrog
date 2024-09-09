@@ -230,6 +230,6 @@ html {
 
 @media (max-width: 480px) {
   .background-image {
-    background-size: contain; /* Poate fi necesar să ajustezi la contain pentru ecrane foarte mici */
+    background-size: cover; /* Poate fi necesar să ajustezi la contain pentru ecrane foarte mici */
   }
 }
