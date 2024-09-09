@@ -8,6 +8,8 @@ body {
 }
 
 .button-container {
+  display: flex;
+  flex-wrap: wrap; /* Asigură că butoanele se ajustează la dimensiunea ecranului */
   position: absolute;
   top: 20px; /* Distanță față de marginea superioară a paginii */
   left: 80px; /* Distanță față de marginea stângă a paginii */
