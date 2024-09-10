@@ -67,7 +67,7 @@ html {
 /* Stilul pentru secțiunea .about-us */
 .about-us {
   position: relative; /* Asigură că z-index va funcționa */
-  z-index: 1; /* Specifică un z-index mai mic decât al animației */
+  z-index: 2; /* Specifică un z-index mai mic decât al animației */
   max-width: 800px;
   margin: 0 auto; /* Centrează conținutul */
   padding: 20px;
@@ -81,15 +81,20 @@ html {
   opacity: 100%;
 }
 .about-us h1 {
-  font-size: 2.5rem; /* Titlu mare și elegant */
+  font-size: 3.5rem; /* Titlu mare și elegant */
   text-align: center; /* Centrează titlul */
-  color: #b26507; /* Culoare evidențiată pentru titlu */
+  color: #b26507; /* Culoare de bază */
+  background: url("images/rust.jpg"); /* Imaginea texturii de rugină */
+  background-size: 20%; /* Asigură acoperirea completă a textului */
+  -webkit-background-clip: text; /* Clip text pentru a afișa doar textura în interiorul textului */
+  -webkit-text-fill-color: transparent; /* Fă textul transparent pentru a vedea textura */
+  overflow: hidden;
 }
 
 /* Stilul pentru buton */
 .button {
   display: inline-block;
-  width: 100%; /* Corectat pentru a nu fi prea mare */
+  width: 98.5%; /* Corectat pentru a nu fi prea mare */
   height: 50px;
   background-color: transparent;
   color: rgb(166, 160, 160);
@@ -108,7 +113,7 @@ html {
 }
 
 .button:hover {
-  box-shadow: 0px 0px 20px 10px rgba(255, 140, 0, 0.6); /* Efectul de highlight sub buton */
+  box-shadow: 0px 0px 16px 1px rgba(255, 140, 0, 0.6); /* Efectul de highlight sub buton */
 }
 
 /* Stilul pentru imaginea de fundal */
@@ -154,7 +159,7 @@ html {
   justify-content: center;
   width: 100%;
   height: auto; /* Permite înălțimea automată */
-  margin-bottom: 10px; /* Adaugă spațiu între slide-uri */
+  margin-bottom: 40px; /* Adaugă spațiu între slide-uri */
 }
 
 .slide img {
@@ -232,4 +237,55 @@ html {
   .background-image {
     background-size: cover; /* Poate fi necesar să ajustezi la contain pentru ecrane foarte mici */
   }
+}
+@keyframes screenFlicker {
+  0% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: contrast(100%);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateX(-2px) translateY(-2px);
+    filter: contrast(120%);
+  }
+  20% {
+    opacity: 0.9;
+    transform: translateX(2px) translateY(2px);
+    filter: contrast(80%);
+  }
+  30% {
+    opacity: 0.7;
+    transform: translateX(-2px) translateY(2px);
+    filter: contrast(10%);
+  }
+  40% {
+    opacity: 0.85;
+    transform: translateX(2px) translateY(-2px);
+    filter: contrast(10%);
+  }
+  0.2% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: contrast(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: contrast(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: contrast(100%);
+  }
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #b26507;
+  position: relative;
+  overflow: hidden;
+  animation: screenFlicker 0.01s ease-in-out infinite;
 }
