@@ -23,7 +23,7 @@ html {
 .ash {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.5; /* Ajustează opacitatea pentru scântei și cenușă */
+  opacity: 0.2; /* Ajustează opacitatea pentru scântei și cenușă */
 }
 
 .spark {
@@ -65,23 +65,40 @@ html {
 }
 
 /* Stilul pentru secțiunea .about-us */
+.about-us-content {
+  max-width: 800px; /* Lățimea maximă a containerului */
+  margin: 0 auto; /* Centrează containerul pe orizontală */
+  padding: 50px; /* Padding în jurul textului */
+  border-radius: 15px; /* Colțuri rotunjite pentru estetică */
+}
+
 .about-us {
   position: relative; /* Asigură că z-index va funcționa */
   z-index: 2; /* Specifică un z-index mai mic decât al animației */
-  max-width: 800px;
+  max-width: 600px;
+  color: #fffefd; /* Culoare de bază */
   margin: 0 auto; /* Centrează conținutul */
-  padding: 20px;
-  background-color: #1a1a1b; /* Fundal întunecat pentru contrast */
+  padding: 90px;
   border-radius: 15px; /* Colțuri rotunjite */
-  box-shadow: 0 0 20px rgba(181, 109, 15, 0.5); /* Umbra subtilă pentru profunzime */
-  color: #ffffff; /* Culoare text albă moale */
   text-align: justify; /* Justifică textul */
-  line-height: 1.6; /* Spațiu mai mare între linii pentru lizibilitate */
-  top: 100px;
-  opacity: 100%;
+  line-height: 1.9; /* Spațiu mai mare între linii pentru lizibilitate */
+  top: 90px;
+  font-size: 0.9rem; /* Dimensiunea textului de bază */
+}
+
+.about-us::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.7); /* Filtru negru semi-transparent */
+  border-radius: 15px; /* Asigură că overlay-ul are colțuri rotunjite, la fel ca fundalul */
+  z-index: -1; /* Pune overlay-ul sub text */
 }
 .about-us h1 {
-  font-size: 3.5rem; /* Titlu mare și elegant */
+  font-size: 1.5rem; /* Titlu mare și elegant */
   text-align: center; /* Centrează titlul */
   color: #b26507; /* Culoare de bază */
   background: url("images/rust.jpg"); /* Imaginea texturii de rugină */
@@ -89,6 +106,32 @@ html {
   -webkit-background-clip: text; /* Clip text pentru a afișa doar textura în interiorul textului */
   -webkit-text-fill-color: transparent; /* Fă textul transparent pentru a vedea textura */
   overflow: hidden;
+  top: 1px;
+  z-index: 3;
+}
+
+.about-us p {
+  font-size: 0.8rem; /* Dimensiunea textului pentru paragrafe */
+  margin: 0 10px; /* Spațiu uniform pe toate laturile */
+  padding: 0 5px; /* Adaugă padding de 20px pe stânga și dreapta */
+  z-index: -1;
+  color: #fffefd; /* Culoare de bază */
+}
+
+/* Fundalul pentru .about-us */
+.about-us-bg {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: url("images/realistic-metal-texture.png") no-repeat center center,
+    rgba(30, 30, 31, 0.8);
+  background-size: cover; /* Imaginea va fi redimensionată la 50% din dimensiunea elementului */
+  background-position: center; /* Asigură că imaginea este centrată */
+  border-radius: 15px; /* Colțuri rotunjite */
+  border-radius: 15px; /* Colțuri rotunjite pentru fundal */
+  z-index: -1; /* Pune fundalul sub text */
 }
 
 /* Stilul pentru buton */
@@ -238,54 +281,33 @@ html {
     background-size: cover; /* Poate fi necesar să ajustezi la contain pentru ecrane foarte mici */
   }
 }
-@keyframes screenFlicker {
+@keyframes subtleGlitch {
   0% {
     opacity: 1;
-    transform: translateX(0) translateY(0);
-    filter: contrast(100%);
   }
-  10% {
-    opacity: 0.1;
-    transform: translateX(-2px) translateY(-2px);
-    filter: contrast(120%);
+  1% {
+    opacity: 0.8;
   }
-  20% {
-    opacity: 0.9;
-    transform: translateX(2px) translateY(2px);
-    filter: contrast(80%);
-  }
-  30% {
-    opacity: 0.7;
-    transform: translateX(-2px) translateY(2px);
-    filter: contrast(10%);
-  }
-  40% {
-    opacity: 0.85;
-    transform: translateX(2px) translateY(-2px);
-    filter: contrast(10%);
-  }
-  0.2% {
+  2% {
     opacity: 1;
-    transform: translateX(0) translateY(0);
-    filter: contrast(100%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-    filter: contrast(100%);
   }
   100% {
     opacity: 1;
-    transform: translateX(0) translateY(0);
-    filter: contrast(100%);
   }
 }
 
 .about-us h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: center;
-  color: #b26507;
+  color: #f88e0e;
   position: relative;
-  overflow: hidden;
-  animation: screenFlicker 0.01s ease-in-out infinite;
+  -webkit-text-stroke: 0.5px #502804; /* Contur negru de 1px */
+  animation: subtleGlitch 1s infinite steps(1, end);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .about-us h1 {
+    margin: 10px 0; /* Margină mai mică pe dispozitive mai mici */
+  }
 }
