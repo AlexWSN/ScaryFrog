@@ -45,3 +45,30 @@ function updateSlidePosition() {
     const offset = -currentIndex * 100;
     document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
 }
+
+// Obține modalul
+var modal = document.getElementById("imageModal");
+
+// Obține imaginea din modal
+var modalImg = document.getElementById("modalImage");
+var captionText = document.getElementById("caption");
+
+// Funcția care deschide modalul
+function openModal(image) {
+  modal.style.display = "block";
+  modalImg.src = image.src;
+  captionText.innerHTML = image.alt; // Adaugă descrierea imaginii
+}
+
+// Închide modalul când dai click pe "x"
+var closeModal = document.getElementsByClassName("close")[0];
+closeModal.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Închide modalul când dai click în afara imaginii
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
