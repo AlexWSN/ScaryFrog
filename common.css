@@ -30,7 +30,7 @@ html {
   width: 5px;
   height: 5px;
   background-color: orange;
-  animation: moveSpark 4s linear infinite;
+  animation: moveSpark 0.1s linear infinite;
 }
 
 .ash {
@@ -66,10 +66,9 @@ html {
 
 /* Stilul pentru secțiunea .about-us */
 .about-us-content {
-  max-width: 800px; /* Lățimea maximă a containerului */
-  margin: 0 auto; /* Centrează containerul pe orizontală */
-  padding: 50px; /* Padding în jurul textului */
-  border-radius: 15px; /* Colțuri rotunjite pentru estetică */
+  max-width: 1400px; /* Lățimea maximă a containerului */
+  margin: 30 auto; /* Centrează containerul pe orizontală */
+  padding: 40px; /* Padding în jurul textului */
 }
 
 .about-us {
@@ -81,47 +80,40 @@ html {
   padding: 90px;
   border-radius: 15px; /* Colțuri rotunjite */
   text-align: justify; /* Justifică textul */
-  line-height: 1.9; /* Spațiu mai mare între linii pentru lizibilitate */
-  top: 90px;
+  line-height: 1; /* Spațiu mai mare între linii pentru lizibilitate */
+  top: 110px;
   font-size: 0.9rem; /* Dimensiunea textului de bază */
 }
 
-.about-us::before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  background: rgba(0, 0, 0, 0.7); /* Filtru negru semi-transparent */
-  border-radius: 15px; /* Asigură că overlay-ul are colțuri rotunjite, la fel ca fundalul */
-  z-index: -1; /* Pune overlay-ul sub text */
-}
 .about-us h1 {
-  font-size: 1.5rem; /* Titlu mare și elegant */
-  text-align: center; /* Centrează titlul */
-  color: #b26507; /* Culoare de bază */
-  background: url("images/rust.jpg"); /* Imaginea texturii de rugină */
-  background-size: 20%; /* Asigură acoperirea completă a textului */
-  -webkit-background-clip: text; /* Clip text pentru a afișa doar textura în interiorul textului */
-  -webkit-text-fill-color: transparent; /* Fă textul transparent pentru a vedea textura */
-  overflow: hidden;
-  top: 1px;
-  z-index: 3;
+  font-size: 2rem;
+  text-align: center;
+  color: #f88e0e; /* Culoare vibrantă pentru text */
+  background: url("images/rust-texture.jpg"); /* Imagine de textură de rugina */
+  background-size: cover; /* Asigură că textura acoperă textul */
+  -webkit-background-clip: text; /* Clip text pentru a afișa doar textura */
+  background-clip: text;
+  /* Efect de embosare prin umbre multiple */
+  text-shadow: -1px -1px 0px #502804,
+    /* Umbra subtilă pentru adâncime */ -1px -1px 2px rgba(0, 0, 0, 0.8),
+    /* Umbra suplimentară pentru contrast */ 1px 1px 1px rgba(0, 0, 0, 0.5); /* Umbra principală pentru efect 3D */
+  animation: glow 0.01s infinite alternate;
+ 
 }
 
 .about-us p {
-  font-size: 0.8rem; /* Dimensiunea textului pentru paragrafe */
-  margin: 0 10px; /* Spațiu uniform pe toate laturile */
-  padding: 0 5px; /* Adaugă padding de 20px pe stânga și dreapta */
+  font-size: 0.9rem; /* Dimensiunea textului pentru paragrafe */
+  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
+  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
   z-index: -1;
   color: #fffefd; /* Culoare de bază */
+  
 }
 
 /* Fundalul pentru .about-us */
 .about-us-bg {
   position: absolute;
-  top: 7px;
+  top: 50px;
   left: 0;
   width: 100%;
   height: 90%;
@@ -131,7 +123,8 @@ html {
   background-position: center; /* Asigură că imaginea este centrată */
   border-radius: 15px; /* Colțuri rotunjite */
   border-radius: 15px; /* Colțuri rotunjite pentru fundal */
-  z-index: -1; /* Pune fundalul sub text */
+  z-index: 2; /* Pune fundalul sub text */
+  opacity: 0.3;
 }
 
 /* Stilul pentru buton */
@@ -296,18 +289,21 @@ html {
   }
 }
 
-.about-us h1 {
-  font-size: 1.5rem;
-  text-align: center;
-  color: #f88e0e;
-  position: relative;
-  -webkit-text-stroke: 0.5px #502804; /* Contur negru de 1px */
-  animation: subtleGlitch 1s infinite steps(1, end);
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-@media (max-width: 600px) {
-  .about-us h1 {
-    margin: 10px 0; /* Margină mai mică pe dispozitive mai mici */
+@keyframes glow {
+  0% {
+    text-shadow: 1px 1px 2px #502804, -1px -1px 2px rgba(0, 0, 0, 0.8),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
   }
+  0.1% {
+    text-shadow: 1px 1px 1px #f88e0e,
+      /* Luminozitate vibrantă pe margini */ -2px -2px 5px
+        rgba(255, 140, 0, 0.6),
+      4px 4px 10px rgba(0, 0, 0, 0.7);
+  }
+}
+.element {
+  -webkit-transform: rotate(45deg); /* Safari/Chrome */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  transform: rotate(45deg); /* Standard */
 }

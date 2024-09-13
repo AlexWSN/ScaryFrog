@@ -2,7 +2,7 @@ function createParticle(type) {
   const particle = document.createElement("div");
   particle.classList.add(type);
   particle.style.left = `${Math.random() * 100}vw`;
-  particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+  particle.style.animationDuration = `${Math.random() * 10 + 1}s`;
 
   document.querySelector(".background").appendChild(particle);
 
