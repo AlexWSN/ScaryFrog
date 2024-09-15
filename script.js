@@ -72,3 +72,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+  var menu = document.getElementById('mainMenu').querySelector('ul');
+  menu.classList.toggle('show');
+});
