@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const buttonContainer = document.querySelector('.button-container');
 
-  // Ascundem meniul pe ecrane mari și-l afișăm pe cele mici la click
+  // Toggle între afișare și ascundere pentru meniul burger
   menuToggle.addEventListener('click', function() {
     buttonContainer.classList.toggle('mobile-visible');
   });

@@ -160,7 +160,6 @@ body {
   -ms-transform: rotate(45deg);     /* Internet Explorer */
   transform: rotate(45deg);         /* Standard */
 }
-
 /* Meniul burger ascuns pe ecranele mari */
 .menu-toggle {
   display: none;
@@ -173,16 +172,16 @@ body {
     display: block;
     position: absolute;
     top: 10px;
-    right: 20px;
+    left: 20px; /* Mutăm butonul burger în stânga */
     cursor: pointer;
     z-index: 3;
   }
 
   .menu-toggle div {
-    width: 35px;
-    height: 5px;
+    width: 30px; /* Lungimea liniilor butonului */
+    height: 3px; /* Grosimea liniilor butonului */
     background-color: #fff;
-    margin: 6px 0;
+    margin: 5px 0;
     transition: 0.4s;
   }
 
@@ -192,10 +191,11 @@ body {
     flex-direction: column;
     position: absolute;
     top: 50px;
-    right: 20px;
+    left: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     border-radius: 8px;
+    z-index: 4;
   }
 
   /* Când meniul burger este activat, meniul apare */
