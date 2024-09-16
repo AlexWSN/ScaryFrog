@@ -73,7 +73,12 @@ window.onclick = function(event) {
   }
 }
 
-document.getElementById('menuToggle').addEventListener('click', function() {
-  var menu = document.getElementById('mainMenu').querySelector('ul');
-  menu.classList.toggle('show');
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const buttonContainer = document.querySelector('.button-container');
+
+  // Ascundem meniul pe ecrane mari și-l afișăm pe cele mici la click
+  menuToggle.addEventListener('click', function() {
+    buttonContainer.classList.toggle('mobile-visible');
+  });
 });

@@ -49,12 +49,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgb(180, 156, 112),
-    transparent
-  );
+  background: linear-gradient(45deg, transparent, rgb(180, 156, 112), transparent);
   border-radius: 15px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -91,6 +86,7 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
+
 
 .spark,
 .ash {
@@ -160,79 +156,60 @@ body {
 }
 .element {
   -webkit-transform: rotate(45deg); /* Safari/Chrome */
-  -moz-transform: rotate(45deg); /* Firefox */
-  -ms-transform: rotate(45deg); /* Internet Explorer */
-  transform: rotate(45deg); /* Standard */
+  -moz-transform: rotate(45deg);    /* Firefox */
+  -ms-transform: rotate(45deg);     /* Internet Explorer */
+  transform: rotate(45deg);         /* Standard */
 }
 
-/* Stiluri pentru meniul principal */
-header {
-  position: relative;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Stiluri pentru meniul hamburger */
+/* Meniul burger ascuns pe ecranele mari */
 .menu-toggle {
   display: none;
-  font-size: 30px;
-  cursor: pointer;
 }
 
-/* Stiluri pentru meniul principal */
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-
-/* Stiluri pentru meniul de tip sandwich */
+/* Stiluri pentru ecranele mici */
 @media (max-width: 768px) {
+  /* Butonul burger vizibil doar pe ecranele mici */
   .menu-toggle {
     display: block;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 3;
   }
 
-  nav ul {
+  .menu-toggle div {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  /* Ascundem meniul de butoane inițial */
+  .button-container {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 50px;
-    left: 0;
-    padding: 10px 0;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
   }
 
-  nav ul.show {
+  /* Când meniul burger este activat, meniul apare */
+  .button-container.mobile-visible {
     display: flex;
   }
 
-  nav ul li {
-    margin: 15px 0;
+  .button {
+    color: #fff;
+    padding: 10px;
     text-align: center;
+    margin: 5px 0;
+    background-color: rgba(255, 140, 0, 0.6);
+    border-radius: 5px;
+    text-decoration: none;
   }
 }
-

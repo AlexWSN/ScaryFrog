@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scary Frog Graphics</title>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">-->
     <link
       href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet" />
@@ -12,23 +13,22 @@
     <link rel="icon" href="images/fav 1.png" type="image/x-icon" />
   </head>
   <body>
-    <header>
-      <!-- Meniu hamburger pentru ecrane mici -->
-      <div class="menu-toggle" id="menuToggle">
-        &#9776; <!-- Simbolul pentru meniul hamburger -->
-      </div>
-
-      <!-- Meniul principal -->
-      <nav id="mainMenu">
-        <ul>
-          <li><a href="about.html" class="button">About</a></li>
-          <li><a href="services.html" class="button">Services</a></li>
-          <li><a href="portfolio.html" class="button">Portfolio</a></li>
-          <li><a href="contact.html" class="button">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    
+        <!-- Meniul burger, vizibil doar pe ecranele mici -->
+        <div class="menu-toggle" aria-label="Deschide meniul">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+    
+        <!-- Meniul principal -->
+        <div class="button-container mobile-hidden">
+          <a href="about.html" class="button">About</a>
+          <a href="services.html" class="button">Services</a>
+          <a href="portfolio.html" class="button">Portfolio</a>
+          <a href="contact.html" class="button">Contact</a>
+        </div>
+    
     <div class="background">
       <div class="overlay"></div>
       <div class="spark"></div>
