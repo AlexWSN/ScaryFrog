@@ -165,14 +165,13 @@ body {
   display: none;
 }
 
-/* Stiluri pentru ecranele mici */
 @media (max-width: 768px) {
   /* Butonul burger vizibil doar pe ecranele mici */
   .menu-toggle {
     display: block;
     position: absolute;
     top: 10px;
-    left: 20px; /* Mutăm butonul burger în stânga */
+    left: 20px;
     cursor: pointer;
     z-index: 3;
   }
