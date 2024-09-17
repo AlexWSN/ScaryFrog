@@ -161,10 +161,23 @@ body {
   transform: rotate(45deg);         /* Standard */
 }
 
+/* Core styling for the body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #010000;
+}
+
 /* Butoanele sunt vizibile implicit pe ecranele mari */
 .button-container {
   display: flex;
   gap: 15px;
+  position: absolute;
+  top: 20px;
+  left: 80px;
 }
 
 /* Ascundem meniul burger pe ecranele mari */
@@ -175,7 +188,7 @@ body {
 /* Stilizare liniile butonului burger */
 .menu-toggle div {
   width: 25px;
-  height: 1px; /* Ajustăm grosimea liniilor */
+  height: 2px; /* Grosimea liniilor */
   background-color: #fff;
   margin: 5px 0;
   transition: 0.4s;
@@ -188,12 +201,12 @@ body {
     display: block;
     position: absolute;
     top: 10px;
-    left: 20px;
+    left: 20px; /* Mutăm butonul burger în stânga */
     cursor: pointer;
     z-index: 10;
   }
 
-  /* Ascundem meniul la început */
+  /* Ascundem meniul de butoane inițial */
   .button-container {
     display: none;
     flex-direction: column;
@@ -203,9 +216,10 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     border-radius: 8px;
+    z-index: 9;
   }
 
-  /* Când meniul este activat (vizibil), îl afișăm */
+  /* Când meniul burger este activat, meniul apare */
   .button-container.mobile-visible {
     display: flex;
   }
