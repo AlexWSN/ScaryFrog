@@ -30,7 +30,6 @@ var captionText = document.getElementById("caption");
 function openModal(image) {
   modal.style.display = "block";
   modalImg.src = image.src;
-  captionText.innerHTML = image.alt; // Adaugă descrierea imaginii
 }
 
 // Obține modalul

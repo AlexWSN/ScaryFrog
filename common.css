@@ -371,6 +371,14 @@ html {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9); /* Fundal semi-transparent */
 }
+.modal img {
+  display: block; /* Asigură-te că imaginea este vizibilă */
+}
+
+
+.modal .alt-text {
+  display: none; /* Ascunde textul alternativ */
+}
 
 .modal-content {
   margin: auto;
