@@ -227,6 +227,13 @@ html {
     max-height: 50vh; /* Ajustează înălțimea imaginii */
   }
 }
+/* Stilul pentru imaginea de fundal pe mobil */
+@media only screen and (max-width: 600px) {
+  .background-image {
+    position: fixed; /* Rămâne fixă pe ecran */
+  }
+}
+
 
 /* Ecrane medii (tablete) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

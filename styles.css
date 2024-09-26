@@ -181,7 +181,7 @@ body {
   gap: 2px;
   position: absolute;
   top: 20px;
-  left: 80px;
+  left: 70px;
 }
 
 /* Ascundem meniul burger pe ecranele mari */
@@ -215,6 +215,11 @@ body {
 .button-container {
   display: none; /* Ascunde meniul implicit */
 }
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  gap: 0.1px; /* Ajustează spațiul dintre butoane (poate fi 5px sau o altă valoare mai mică) */
+}
+
 
 /* Stiluri pentru meniul burger */
 .menu-toggle {
