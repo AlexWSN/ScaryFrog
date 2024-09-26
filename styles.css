@@ -183,13 +183,14 @@ body {
 /* Ascundem meniul burger pe ecranele mari */
 .menu-toggle {
   display: none;
+  background-color: transparent;
 }
 
 /* Stilizare liniile butonului burger */
 .menu-toggle div {
   width: 25px;
   height: 2px; /* Grosimea liniilor */
-  background-color: #fff;
+  background-color: #8f8888;
   margin: 5px 0;
   transition: 0.4s;
 }
@@ -205,33 +206,42 @@ body {
     cursor: pointer;
     z-index: 10;
   }
+}
+  /* Ascunde meniul pe ecranele mici */
+.button-container {
+  display: none; /* Ascunde meniul implicit */
+}
 
-  /* Ascundem meniul de butoane inițial */
+/* Stiluri pentru meniul burger */
+.menu-toggle {
+  cursor: pointer;
+  display: flex; /* Asigură-te că barele se aliniază */
+  flex-direction: column;
+  padding: 10px;
+  z-index: 100; /* Pune meniul deasupra altor elemente */
+}
+
+/* Stil pentru barele din meniul burger */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: rgb(60, 57, 57);
+  margin: 5px 0;
+}
+
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  display: flex; 
+}
+
+/* Stiluri pentru ecrane mari */
+@media (min-width: 601px) {
   .button-container {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 9;
+      display: flex; /* Afișează meniul pe ecranele mari */
   }
 
-  /* Când meniul burger este activat, meniul apare */
-  .button-container.mobile-visible {
-    display: flex;
-  }
-
-  /* Stiluri pentru butoane */
-  .button {
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin: 5px 0;
-    background-color: rgba(255, 140, 0, 0.6);
-    border-radius: 5px;
-    text-decoration: none;
+  .menu-toggle {
+      display: none; /* Ascunde meniul burger pe ecranele mari */
   }
 }
+

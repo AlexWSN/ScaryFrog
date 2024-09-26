@@ -18,33 +18,6 @@ setInterval(() => {
   createParticle("ash");
 }, 200);
 
-//PORTOFOLIU
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-
-function moveToNextSlide() {
-    if (currentIndex === totalSlides - 1) {
-        currentIndex = 0;
-    } else {
-        currentIndex++;
-    }
-    updateSlidePosition();
-}
-
-function moveToPrevSlide() {
-    if (currentIndex === 0) {
-        currentIndex = totalSlides - 1;
-    } else {
-        currentIndex--;
-    }
-    updateSlidePosition();
-}
-
-function updateSlidePosition() {
-    const offset = -currentIndex * 100;
-    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-}
 
 // Obține modalul
 var modal = document.getElementById("imageModal");
@@ -60,25 +33,44 @@ function openModal(image) {
   captionText.innerHTML = image.alt; // Adaugă descrierea imaginii
 }
 
+// Obține modalul
+var modal = document.getElementById("imageModal");
+
+// Obține imaginea din modal
+var modalImg = document.getElementById("modalImage");
+var captionText = document.getElementById("caption");
+
 // Închide modalul când dai click pe "x"
 var closeModal = document.getElementsByClassName("close")[0];
-closeModal.onclick = function() {
-  modal.style.display = "none";
+if (closeModal) {
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    };
+} else {
+    console.error("Elementul 'close' nu a fost găsit!");
 }
 
 // Închide modalul când dai click în afara imaginii
 window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const buttonContainer = document.querySelector('.button-container');
 
-  // Toggle între afișare și ascundere pentru meniul burger
-  menuToggle.addEventListener('click', function() {
-    buttonContainer.classList.toggle('mobile-visible');
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.button-container');
+
+  burger.addEventListener('click', function() {
+      console.log('Butonul hamburger a fost apăsat.'); // Debug message
+      navMenu.classList.toggle('active');
+      
+      // Verifică dacă meniul a fost activat
+      if (navMenu.classList.contains('active')) {
+          console.log('Meniul este acum activ.');
+      } else {
+          console.log('Meniul este acum inactiv.');
+      }
   });
 });
