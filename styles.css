@@ -178,7 +178,7 @@ body {
 /* Butoanele sunt vizibile implicit pe ecranele mari */
 .button-container {
   display: flex;
-  gap: 15px;
+  gap: 2px;
   position: absolute;
   top: 20px;
   left: 80px;
@@ -195,7 +195,6 @@ body {
   width: 25px;
   height: 2px; /* Grosimea liniilor */
   background-color: #8f8888;
-  margin: 5px 0;
   transition: 0.4s;
 }
 
@@ -211,6 +210,7 @@ body {
     z-index: 10;
   }
 }
+
 /* Ascunde meniul pe ecranele mici */
 .button-container {
   display: none; /* Ascunde meniul implicit */
@@ -229,7 +229,6 @@ body {
 .bar {
   width: 30px;
   height: 3px;
-  background-color: rgb(60, 57, 57);
   margin: 5px 0;
 }
 
