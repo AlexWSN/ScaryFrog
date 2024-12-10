@@ -512,3 +512,11 @@ html {
   color: #4f92de;
 }
 
+.modal {
+  display: none;
+  /* alte stiluri pentru modal */
+}
+
+.modal.show {
+  display: block;
+}
