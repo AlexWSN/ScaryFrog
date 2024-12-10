@@ -64,7 +64,8 @@ html {
   }
 }
 
-/* Stilul pentru secțiunea .about-us */
+/* ABOUT US */
+
 .about-us-content {
   max-width: 1400px; /* Lățimea maximă a containerului */
   margin: 30 auto; /* Centrează containerul pe orizontală */
@@ -89,7 +90,7 @@ html {
   font-size: 2rem;
   text-align: center;
   color: #f88e0e; /* Culoare vibrantă pentru text */
-  background: url("images/rust-texture.jpg"); /* Imagine de textură de rugina */
+  background: url("/images/rust-texture.jpg"); /* Imagine de textură de rugina */
   background-size: cover; /* Asigură că textura acoperă textul */
   -webkit-background-clip: text; /* Clip text pentru a afișa doar textura */
   background-clip: text;
@@ -127,7 +128,7 @@ html {
   opacity: 0.3;
 }
 
-/* Stilul pentru buton */
+/* Stilul pentru buton HOME*/
 .button {
   display: inline-block;
   width: 98.5%; /* Corectat pentru a nu fi prea mare */
@@ -164,10 +165,10 @@ html {
   background-attachment: fixed; /* Face imaginea fixă la scroll */
   z-index: 0; /* Plasează imaginea sub animație și buton */
   opacity: 0.6; /* Setează opacitatea la 0.6 pentru vizibilitate */
-  background-image: url("images/background.png");
+  background-image: url("/images/background.png");
 }
 
-/* Portofoliu */
+/* PORTOFOLIU */
 body,
 html {
   margin: 0;
@@ -210,6 +211,19 @@ html {
 .button:focus {
   outline: 2px solid #f88e0e; /* Contur vizibil pentru accesibilitate */
 }
+
+
+
+.sparks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Scântei să nu interfereze cu clicurile */
+  z-index: 2; /* Între fundal și formular */
+}
+
 
 /* Adăugare will-change pentru animații */
 .spark, .ash {
@@ -412,3 +426,89 @@ html {
   padding: 10px;
   font-size: 16px;
 }
+
+/* Stiluri pentru formularul de contact */
+.contact-section {
+  padding: 50px;
+  background-color: #303130;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(164, 84, 3, 0.1);
+  position: relative; /* Așa că z-index va funcționa */
+  z-index: 9; /* Asigură-te că formularul va fi deasupra altor elemente */
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #746f6f;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-size: 16px;
+  color: #838080;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #b0a9a9;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #a09c9c; /* Culoare fundal câmpuri de text */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #de7906;
+  outline: none;
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: #f0f0f0 !important; /* Gri sau altă culoare dorită */
+  color: #333 !important; /* Text color */
+  border: 1px solid #ccc !important; /* Bordura */
+  box-shadow: 0 0 0px 1000px #f0f0f0 inset; /* Fundal consistent */
+  transition: background-color 5000s ease-in-out 0s; /* Evită ca stilurile implicite să revină */
+}
+
+/* Pentru alte browsere compatibile */
+.contact-form input:autofill,
+.contact-form textarea:autofill {
+  background-color: #f0f0f0 !important; /* Fundal gri */
+  color: #333 !important;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #494a4b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #784d02;
+}
+
+/* Stiluri pentru mesajul de succes sau eroare */
+#formResponse {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #4f92de;
+}
+

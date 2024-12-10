@@ -73,3 +73,29 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+
+
+// Procesarea formularului la trimitere
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Previne comportamentul implicit al formularului (reîncărcarea paginii)
+
+  // Preluarea valorilor din formular
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  // Validarea datelor
+  if (name && email && subject && message) {
+    // Dacă toate câmpurile sunt completate corect, trimitem datele
+    document.getElementById("formResponse").innerHTML = `<p>Mulțumim, ${name}! Mesajul tău a fost trimis cu succes.</p>`;
+    document.getElementById("formResponse").style.color = "orange";
+
+    // Resetăm formularul
+    document.getElementById("contactForm").reset();
+  } else {
+    // Dacă există câmpuri necompletate
+    document.getElementById("formResponse").innerHTML = "<p>Te rugăm să completezi toate câmpurile formularului.</p>";
+    document.getElementById("formResponse").style.color = "red";
+  }
+});
